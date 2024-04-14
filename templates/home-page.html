@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page</title>
+    <link rel="stylesheet" href="/static/main_page.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+       footer {
+
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            margin-bottom: 0pc;
+        }
+
+        .social-media-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .sidebar {
+            position: fixed;
+            width: 200px;
+            height: 100%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            overflow-y: auto;
+            top:0pc;
+        }
+
+        .sidebar form {
+            margin-bottom: 20px;
+        }
+
+        .list-container {
+            margin-top: 20px;
+        }
+
+        .list-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .list-container input[type="text"],
+        .list-container input[type="radio"] {
+            margin-bottom: 10px;
+        }
+
+        .list-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .para {
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <p>Header with Social Media Links</p>
+    <div class="social-media-links">
+        <a href="https://www.facebook.com/bicky.yadav.100" target="_blank">Facebook</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    </div>
+</header>
+
+<div class="sidebar">
+    <form action="/main_page" method="post">
+        <div class="list-container">
+            <label for="phone_number">Phone number to receive price update:</label>
+            <input type="text" name="phone_number" required>
+            <p>List of items on Flipkart and Amazon</p>
+            <input type="radio" id="item1" name="item" value="phone">
+            <label for="item1">Phone</label>
+            <input type="radio" id="item2" name="item" value="head_phones">
+            <label for="item2">Headphones</label>
+            <input type="radio" id="item3" name="item" value="watches">
+            <label for="item3">Watches</label>
+            <input type="radio" id="item4" name="item" value="t-shirt_men">
+            <label for="item4">Men's T-shirt</label>
+            <input type="radio" id="item5" name="item" value="t-shirt_women">
+            <label for="item5">Women's T-shirt</label>
+            <input type="radio" id="item6" name="item" value="crocs">
+            <label for="item6">Crocs</label>
+            <input type="radio" id="item7" name="item" value="apple_watch">
+            <label for="item7">Apple Watch</label>
+            <input type="radio" id="item8" name="item" value="iphone">
+            <label for="item8">iPhone</label>
+            <input type="radio" id="item9" name="item" value="baby_products">
+            <label for="item9">Baby Products</label>
+            <!-- Removed the extra input for "beauty_products" -->
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<div class="content">
+    <h2 class="para">Total Items</h2>
+    <h3>Search result from Amazon</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add rows here -->
+        </tbody>
+    </table>
+    <h3>Search result from Flipkart</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add rows here -->
+        </tbody>
+    </table>
+    <h2 class="para">Continuous Monitoring Items</h2>
+    <h3>Amazon products</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add rows here -->
+        </tbody>
+    </table>
+    <h3>Flipkart products</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add rows here -->
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <p>Email: example@example.com</p>
+    <p>Other footer content</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/login_page.css">
+    <title> Login page </title>
+</head>
+<body>
+    <div class="container">
+        <form action="/login_page" method="post" class="login-form">
+            <h1 class="center">Login page</h1>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Log In</button>
+            
+        </form>
+        <div class="center"> or</div>
+            <div style="padding: 5px;">sign up if you don't have an account</div>
+            <a href="/signup_page">
+            <button href="/signup_page">sign-up</button>
+            </a>
+            {% if error!="" %}
+                <p style="color:red">{{error}}</p>
+            {% endif %}
+        </div>
+</body>
+</html>

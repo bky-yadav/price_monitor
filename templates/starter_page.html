@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f0f0f0; /* Background color */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #333; /* Header background color */
+            color: #fff; /* Header text color */
+            padding: 10px 0;
+            text-align: center;
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+        .content {
+            margin-top: 20px;
+            text-align: center;
+            flex: 1; /* Grow to fill remaining space */
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff; /* Button background color */
+            color: #fff; /* Button text color */
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3; /* Button background color on hover */
+        }
+        footer {
+            background-color: #333; /* Footer background color */
+            color: #fff; /* Footer text color */
+            padding: 10px 0;
+            text-align: center;
+        }
+        .description {
+            font-size: 1.5em; /* Larger font size for description */
+            margin-bottom: 20px; /* Add some bottom margin for spacing */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <!-- Replace the src attribute with the path to your logo image -->
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
+    </header>
+
+    <div class="container content">
+        <h1>Welcome to Our Ecommerce Website</h1>
+        <p class="description">This is a placeholder text describing your ecommerce website. You can replace it with your own content later.</p>
+        <p>Start exploring our wide range of products!</p>
+        <div>
+            <a href="login_page" class="btn">Login</a>
+            <a href="signup_page" class="btn">Signup</a>
+        </div>
+    </div>
+
+    <!-- Add more sections, such as categories, featured products, etc. -->
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Your Ecommerce Website. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

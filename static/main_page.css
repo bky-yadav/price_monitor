@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: indigo;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+footer {
+
+    background-color:indigo;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    margin-bottom: 0pc;
+}
+
+.social-media-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.social-media-links:hover{
+    color: darkblue;
+}
+
+.sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color:whitesmoke;
+    padding: 20px;
+    overflow-y: auto;
+    top:0pc;
+}
+
+.sidebar form {
+    margin-bottom: 20px;
+}
+
+.list-container {
+    margin-top: 20px;
+}
+
+.list-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.list-container input[type="text"],
+.list-container input[type="radio"] {
+    margin-bottom: 10px;
+}
+
+.list-container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.para {
+    margin-left: auto;
+}

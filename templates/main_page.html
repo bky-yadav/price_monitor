@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page</title>
+    <link rel="stylesheet" href="/static/main_page.css">
+</head>
+<body>
+
+<header>
+    <p>Header with Social Media Links</p>
+    <div class="social-media-links">
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    </div>
+</header>
+
+<div class="sidebar">
+    <form action="/mainpage" method="post">
+        <div class="list-container">
+            <label for="Email">Email to receive price update</label>
+            <input type="text" name="Email" required>
+
+            <p>List of items on flip-kart and amazon</p>
+            <input type="radio" id="item1" name="item" value="phone">
+            <label for="item1">phone</label><br>
+            <input type="radio" id="item2" name="item" value="laptop">
+            <label for="item2">laptop</label><br>
+            <input type="radio" id="item3" name="item" value="iphone">
+            <label for="item3">iphone</label><br>
+            <input type="radio" id="item4" name="item" value="ipad">
+            <label for="item4">ipad</label><br>
+            <button type="submit">Submit Radio</button>
+        </div>
+    </form>
+    <a href="/"><button style="background-color: #dc3545; /* Red */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 12px;
+        border: 2px solid #dc3545;
+        margin-top: 150px;"> 
+ Logout
+</button></a>
+</div>
+
+
+
+<div class="content">
+    <h2 class="para">Total Items</h2>
+    <h4>search result from amazon</h4>
+    <table>
+        <thead>
+        <tr>
+            <th>title</th>
+            <th>ratings</th>
+            <th>price</th>
+            <th>Image</th>
+            <th>action</th>
+        </tr>
+        </thead>
+       
+            {% if not amazon_prod_info %}
+            <tbody>
+
+            </tbody>
+            {% else %}
+            <tbody>
+            {% for i in amazon_prod_info %}
+            <tr>
+                <td><a href={{i.product_link}}>{{i.product_title}}</a></td>
+                <td>{{i.product_review}}</td>
+                <td>{{i.product_price}}</td>
+                <td><img src={{i.product_image}} alt="alternate_image.jpeg"></td>
+                <td> <a href="/add_amazon/{{i.sno}}" style="text-decoration: none;">
+                    <button style="background-color: #007bff; /* Blue */
+                                    border: none;
+                                    color: white;
+                                    padding: 10px 20px;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    display: inline-block;
+                                    font-size: 16px;
+                                    margin: 4px 2px;
+                                    transition-duration: 0.4s;
+                                    cursor: pointer;
+                                    border-radius: 12px;
+                                    border: 2px solid #007bff;">
+                        Monitor Price
+                    </button>
+                </a>
+                
+                </td>
+
+            </tr>
+            {% endfor %}
+             </tbody>
+             {% endif %}
+
+    </table>
+    <h4>search result from flipkart</h4>
+    <table>
+        <thead>
+        <tr>
+            <th>title</th>
+            <th>features</th>
+            <th>price</th>
+            <th>Image</th>
+            <th>action</th>
+        </tr>
+        </thead>
+        {% if not flipkart_prod_info %}
+            <tbody>
+
+            </tbody>
+            {% else %}
+            <tbody>
+            {% for i in flipkart_prod_info %}
+            <tr>
+                <td><a href={{i.product_link}}>{{i.product_title}}</a>
+                </td>
+                <td>{{i.product_attributes}}</td>
+                <td>{{i.product_price}}</td>
+                <td><img src={{i.product_image}} alt="alternate_image.jpeg" width="3000" height="3000"></td>
+                <td> <a href="/add_flipkart/{{i.sno}}" style="text-decoration: none;">
+                    <button style="background-color: #007bff; /* Blue */
+                                    border: none;
+                                    color: white;
+                                    padding: 10px 20px;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    display: inline-block;
+                                    font-size: 16px;
+                                    margin: 4px 2px;
+                                    transition-duration: 0.4s;
+                                    cursor: pointer;
+                                    border-radius: 12px;
+                                    border: 2px solid #007bff;">
+                        Monitor Price
+                    </button>
+                </a>
+                
+               </td>
+            </tr>
+            {% endfor %}
+             </tbody>
+             {% endif %}
+    </table>
+
+    <h2 class="para">Continuous Monitoring Items</h2>
+    <h4>amazon products</h4>
+    <table>
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>price</th>
+            <th>action</th>
+        </tr>
+        </thead>
+        {% if amazon_particular_product %}
+        {% for i in amazon_particular_product %}
+        <tbody>
+        <tr>
+            <td>{{i.product_title}}</td>
+            <td>{{i.product_price_current}}</td>
+            <td><a href="/remove_amazon/{{i.sno}}" style="text-decoration: none;">
+                <button style="background-color: #4CAF50; /* Green */
+                                border: none;
+                                color: white;
+                                padding: 10px 20px;
+                                text-align: center;
+                                text-decoration: none;
+                                display: inline-block;
+                                font-size: 16px;
+                                margin: 4px 2px;
+                                transition-duration: 0.4s;
+                                cursor: pointer;
+                                border-radius: 12px;
+                                border: 2px solid #4CAF50;">
+                    remove
+                </button>
+        </tr>
+        </tbody>
+        {% endfor %}
+        {% else %}
+            <tbody>
+
+            </tbody>
+        {% endif %}
+    </table>
+    <h4>flipkart products</h4>
+    <table>
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>price</th>
+            <th>action</th>
+        </tr>
+        </thead>
+        {% if flipkart_particular_product %}
+        {% for i in flipkart_particular_product %}
+        <tbody>
+            <tr>
+                <td>{{i.product_title}}</td>
+                <td>{{i.product_price_current}}</td>
+                <td><a href="/remove_flipkart/{{i.sno}}" style="text-decoration: none;">
+                    <button style="background-color: #4CAF50; /* Green */
+                                    border: none;
+                                    color: white;
+                                    padding: 10px 20px;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    display: inline-block;
+                                    font-size: 16px;
+                                    margin: 4px 2px;
+                                    transition-duration: 0.4s;
+                                    cursor: pointer;
+                                    border-radius: 12px;
+                                    border: 2px solid #4CAF50;">
+                        remove
+                    </button>
+                </a>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+        {% else %}
+            <tbody>
+
+            </tbody>
+        {% endif %}
+    </table>
+</div>
+
+<footer>
+    <p>Email: example@example.com</p>
+    <p>Other footer content</p>
+</footer>
+
+</body>
+</html>
