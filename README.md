@@ -1,4 +1,5 @@
-Continuous Price Monitoring with Flask and Web Scraping
+<h2>Continuous Price Monitoring with Flask and Web Scraping</h2>
+
 This project utilizes Flask, a Python web framework, along with web scraping techniques to create a price monitoring system. The goal of this system is to enable users to continuously monitor the prices of products they are interested in, such as items on e-commerce websites like Amazon and Flipkart.
 
 Features
